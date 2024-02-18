@@ -5,7 +5,7 @@
 ## Python part for Government and Boarder Authority
 
 
-## Contract
+## Contact
 For any type of support -
 
 
