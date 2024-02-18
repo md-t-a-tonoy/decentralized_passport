@@ -1,5 +1,5 @@
 # Decentralized Passport System
 
-##JS part for user and Visa Authority
+## JS part for user and Visa Authority
 
-##Python part for governent and Boarder Authority
+## Python part for governent and Boarder Authority
