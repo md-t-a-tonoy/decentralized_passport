@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Fredoka&family=Koh+Santepheap:wght@300;400;700&family=Roboto+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <title>Passport System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="m-5">
+  <h2 class="text-5xl text-center mb-5 font-bold">Status Page</h2>
+  <!-- Form to set border status and notes -->
+  <div class="flex">
+
+    <form
+      id="setStatusForm"
+      method="post"
+      action="/status"
+      class="p-8 text-xl shadow-2xl rounded-3xl ml-20 h-[400px] w-[680px]"
+    >
+      <table>
+        <tr class="h-20 text-2xl">
+          <td><label for="uuid" class="px-8 pr-12">UUID:</label></td>
+          <td>
+            <input
+              type="text"
+              id="uuid"
+              name="uuid"
+              placeholder="Enter UUID"
+              required
+              class="rounded-xl p-5 w-96 mb-5"
+            />
+          </td>
+        </tr>
+        <tr class="h-20 text-2xl">
+          <td>
+            <label for="status" class="px-8 pr-12">Status:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              class="rounded-xl p-5 w-96 mb-5"
+              id="status"
+              name="status"
+              placeholder="Enter status"
+              required
+            />
+          </td>
+        </tr>
+        <tr class="h-20 text-2xl">
+          <td><label for="note" class="px-8 pr-12">Note:</label></td>
+          <td>
+            <input
+              type="text"
+              id="note"
+              name="note"
+              class="rounded-xl p-5 w-96 mb-5"
+              placeholder="Enter note"
+              required
+            />
+          </td>
+        </tr>
+      </table>
+
+      <input
+        type="submit"
+        id="setStatusButton"
+        class="cursor-pointer bg-black text-white rounded-3xl py-4 ml-96 px-8 border-4 border-black hover:border-4 hover:border-blue-200 hover:text-blue-200"
+        value="Set Status"
+      />
+    </form>
+    <br />
+
+    <!-- Form to get all statuses and notes for a UUID -->
+    <form
+      id="getStatusForm"
+      method="get"
+      action="/status"
+      class="p-8 text-xl shadow-2xl rounded-3xl ml-20 pt-32 w-[640px] h-[400px]"
+    >
+      <label for="uid" class="px-8 pr-12">UUID:</label>
+      <input
+        type="text"
+        id="uid"
+        name="uid"
+        class="rounded-xl p-5 w-96 mb-5"
+        placeholder="Enter UUID to get statuses"
+        required
+      />
+      <br /><br />
+      <input
+        type="hidden"
+        id="get_all_status"
+        name="get_all_status"
+        value="true" 
+      />
+      <input
+        type="submit"
+        class="cursor-pointer bg-black text-white rounded-3xl py-4 ml-80 px-8 border-4 border-black hover:border-4 hover:border-blue-200 hover:text-blue-200"
+        value="Get Statuses"
+      />
+    </form>
+  </div>
+  <hr class="mt-5 border-b-2 border-black" />
+  <!-- Display all statuses and notes -->
+  <div class="allStatuses" id="allStatuses">
+  <h3 class="text-2xl text-center my-5 font-bold -mt-16">
+    All Statuses and Notes
+  </h3>
+  {% if statuses is not none and notes is not none %}
+      {% for status, note in zip(statuses, notes) %}
+          <p class="text-center">Status: {{ status }}, Note: {{ note }}</p>
+      {% endfor %}
+  {% else %}
+      <p class="text-center">No statuses and notes available.</p>
+  {% endif %}
+</div>
+
+  <script>
+    // Show loading text on the "Set Status" button when form is submitted
+    document.getElementById('setStatusForm').addEventListener('submit', function() {
+      const setStatusButton = document.querySelector('#setStatusButton'); // Select the button
+      setStatusButton.value = "Loading..."; // Change button text to "Loading..."
+    });
+
+    // Show loading text on the "Get Statuses" button when form is submitted
+    document.getElementById('getStatusForm').addEventListener('submit', function() {
+      const getStatusButton = document.querySelector('#getStatusForm input[type="submit"]');
+      getStatusButton.value = "Loading..."; // Change button text to "Loading..."
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Fredoka&family=Koh+Santepheap:wght@300;400;700&family=Roboto+Condensed:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kelly+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Passport System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function hideElement(elementId) {
+        var hideElement = document.getElementById(elementId);
+        hideElement.classList.add('hidden');
+        hideElement.removeEventListener('mouseover', hideElement);
+      }
+    </script>
+  </head>
+
+  <body class="bg-background ml-32 mt-8">
+
+    <h1 class="text-center mt-4 text-5xl mb-8 font-semibold">
+      Government Contract Interface
+    </h1>
+    <div class="flex">
+
+
+      <div>
+            <form
+          action="/deploy_sub_contract"
+          method="post"
+          id="one"
+          class="text-xl font-kons p-10 mt-4  bg-black shadow-2xl w-96 rounded-xl h-64"
+        >
+          <table class="m-10 -ml-8 -mt-2">
+            <!-- Row One -->
+            <tr class="mb-4">
+              <td><label for="password" class="">Password:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="password"
+                  name="password"
+                  placeholder="**********"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+            <!-- Row Two -->
+            <tr class="mb-4">
+              <td><label for="uuid">UUID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+          </table>
+          <!-- button -->
+          <p class="mb-4 -ml-48 mt-2">
+            <input
+              type="submit"
+              class="forborderr"
+              value="Deploy Sub Contract"
+            />
+          </p>
+        </form>
+        
+
+        <div id="hide" class="bg-black h-64 w-96 absolute rounded-3xl border-4 border-blue-200 -mt-64 cursor-pointer" onmouseover="hideElement('hide')">
+            <p class="font-bold text-2xl text-center text-blue-200 pt-28">Deploy Sub Contract</p>
+        </div>
+
+        <!-- get sub contract detail -->
+
+        <form
+          action="/get_sub_contract_details"
+          method="post"
+          class="text-xl font-kons p-10 mt-4  bg-black shadow-2xl w-96 rounded-xl h-64"
+          id="one"
+        >
+          <table class="m-10 -ml-8 -mt-2">
+            <!-- Row One -->
+            <tr class="mb-4">
+              <td><label for="uuid" class="pr-8">UUID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+          </table>
+          <!-- button -->
+          <p class="mb-4 -ml-48 mt-2">
+            <input
+              type="submit"
+              class="forborderr"
+              value="Get Sub Contract Details"
+            />
+          </p>
+        </form>
+        <div id="hide1" class="bg-black h-64 w-96 absolute rounded-3xl border-4 border-blue-200 -mt-64 cursor-pointer" onmouseover="hideElement('hide1')">
+          <p class="font-bold text-2xl text-center text-blue-200 pt-28">Get Sub Contract Details</p>
+      </div>
+
+
+        <!-- deploy visa contract -->
+        </div>
+
+        <div>
+
+        <form
+          action="/deploy_visa_contract"
+          method="post"
+          class="text-xl font-kons p-10 mt-4  shadow-2xl w-96 rounded-xl bg-black h-64 ml-20"
+          id="one"
+        >
+          <table class="m-10 -ml-8 -mt-2">
+            <!-- Row One -->
+            <tr class="mb-4">
+              <td>
+                <label for="visa_authority" class="">Visa Authority ID:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="password"
+                  name="password"
+                  placeholder="Your id:XXXXXXXXXX"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+            <!-- Row Two -->
+            <tr class="mb-4">
+              <td><label for="uuid">Password:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+          </table>
+          <!-- button -->
+          <p class="mb-4 -ml-48 mt-2">
+            <input
+              type="submit"
+              class="forborderr"
+              value="Deploy Visa Contract"
+            />
+          </p>
+        </form>
+
+        <div id="hide2" class="bg-black h-64 w-96 absolute rounded-3xl border-4 border-blue-200 -mt-64 ml-20 cursor-pointer" onmouseover="hideElement('hide2')">
+          <p class="font-bold text-2xl text-center text-blue-200 pt-28">Deploy Visa Contract</p>
+      </div>
+
+
+        <!-- deploy border authority contract -->
+
+        <form
+          action="/deploy_border_authority_contract"
+          method="post"
+          id="one"
+          class="text-xl font-kons ml-20 p-10 mt-4  bg-black shadow-2xl w-96 rounded-xl h-64"
+        >
+          <table class="m-10 -ml-4 -mt-2">
+            <!-- Row One -->
+            <tr class="mb-4">
+              <td>
+                <label for="transport_name" class=""> Password:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="transport_name"
+                  name="transport_name"
+                  placeholder="Transport Name"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+            <!-- Row Two -->
+            <tr class="mb-4">
+              <td><label for="uuid">UUID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+             <!-- Row Two -->
+             <!-- <tr class="mb-4">
+              <td><label for="uuid">ID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="id"
+                  name="id"
+                  placeholder="id"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr> -->
+          </table>
+          <!-- button -->
+          <p class="mb-4 mt-2 -ml-60">
+            <input
+              type="submit"
+              class="forborderr"
+              value="Deploy Border Authority Contract"
+            />
+          </p>
+        </form>
+        <div id="hide3" class="bg-black h-64 w-96 absolute rounded-3xl border-4 ml-20 border-blue-200 -mt-64 cursor-pointer" onmouseover="hideElement('hide3')">
+          <p class="font-bold text-2xl text-center text-blue-200 pt-28">Deploy Border Authority Contract</p>
+      </div>
+
+
+
+        </div>
+        
+        <div>
+        <!-- GET VISA -->
+
+        <form
+          action="/get_visa"
+          method="post"
+          class="text-xl bg-black font-kons p-10 mt-4 shadow-2xl w-96 rounded-xl h-64 mx-20"
+          id="one"
+        >
+          <table class="m-10 -ml-4 -mt-2">
+            <!-- Row ONE -->
+            <tr class="mb-4">
+              <td><label for="uuid">Visa Authority ID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+          </table>
+          <!-- button -->
+          <p class="mb-4 mt-2 -ml-32 bg-pink-200">
+            <input type="submit" class="forborderr" value="Get Visa" />
+          </p>
+        </form>
+        <div id="hide4" class="bg-black h-64 w-96 absolute rounded-3xl border-4 border-blue-200 ml-20 -mt-64 cursor-pointer" onmouseover="hideElement('hide4')">
+          <p class="font-bold text-2xl text-center text-blue-200 pt-28">Get Visa</p>
+      </div>
+
+
+        <!-- GET BORDER AUTHORITY -->
+
+        <form
+          action="/get_border_authority"
+          method="post"
+          class="text-xl font-kons p-10 mt-4  bg-black shadow-2xl w-96 rounded-xl h-64 mx-20"
+          id="one"
+        >
+          <table class="m-10 -ml-4 -mt-2">
+            <!-- Row ONE -->
+            <tr class="mb-4">
+              <td><label for="uuid">UUID:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="uuid"
+                  name="uuid"
+                  placeholder="uuid"
+                  class="forborder"
+                /><br />
+              </td>
+            </tr>
+          </table>
+          <!-- button -->
+          <p class="mb-4 -ml-40 mt-2">
+            <input
+              type="submit"
+              class="forborderr"
+              value="Get Border Authority "
+            />
+          </p>
+        </form>
+
+        <div id="hide5" class="bg-black h-64 w-96 absolute rounded-3xl border-4 border-blue-200 -mt-64 ml-20 cursor-pointer" onmouseover="hideElement('hide5')">
+          <p class="font-bold text-2xl text-center text-blue-200 pt-28">Get 
+            Border Authority
+          </p>
+      </div>
+
+
+      </div>
+    
+    </div>
+
+
+  </body>
+</html>

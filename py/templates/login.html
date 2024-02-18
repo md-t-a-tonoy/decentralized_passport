@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h2>Login Page</h2>
+    <div class="login">
+        <form id="loginForm" method="post" action="/login">
+            <label for="uuid">UUID:</label>
+            <input type="text" id="uuid" name="uuid" placeholder="Enter your UUID" required>
+            <br><br>
+            <label for="transport_name">Transport Name:</label>
+            <input type="text" id="transport_name" name="transport_name" placeholder="Enter your transport name" required>
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
